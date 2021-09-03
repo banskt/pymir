@@ -1,4 +1,5 @@
 import sys
+import atexit
 import setuptools
 from setuptools.command.bdist_egg import bdist_egg
 
@@ -38,7 +39,7 @@ setuptools.setup(
     ],
     package_dir      = {"": "src"},
     packages         = ["pymir"],
-    python_requires  = ">=3.9",
+    python_requires  = ">=3.7",
     install_requires = [
         "numpy>=1.19.4",
         "matplotlib>=3.3.4",
