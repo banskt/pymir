@@ -181,7 +181,7 @@ def force_insert_ticks(tpos, tmarks, tmarks_insert, scale = 'linear'):
 
 
 def set_yticks(ax, kmin = 2, kmax = 6, scale = 'linear', spacing = 'linear', tickmarks = None, 
-               rotation = 0, forceticks = None):
+               rotation = 0, forceticks = None, fmt = '{}'):
     if tickmarks is None:
         y0, y1 = ax.get_ylim()
         tpos, tmarks = get_ticks(y0, y1, kmin, kmax, scale = scale, spacing = spacing)
@@ -191,12 +191,12 @@ def set_yticks(ax, kmin = 2, kmax = 6, scale = 'linear', spacing = 'linear', tic
         tpos = scale_list(tickmarks, scale = scale)
         tmarks = tickmarks.copy()
     ax.set_yticks(tpos)
-    ax.set_yticklabels([f"{x}" for x in tmarks], rotation = rotation)
+    ax.set_yticklabels([fmt.format(x) for x in tmarks], rotation = rotation)
     return
 
 
 def set_xticks(ax, kmin = 2, kmax = 6, scale = 'linear', spacing = 'linear', tickmarks = None, 
-               rotation = 0, forceticks = None):
+               rotation = 0, forceticks = None, fmt = '{}'):
     if tickmarks is None:
         x0, x1 = ax.get_xlim()
         tpos, tmarks = get_ticks(x0, x1, kmin, kmax, scale = scale, spacing = spacing)
@@ -206,7 +206,7 @@ def set_xticks(ax, kmin = 2, kmax = 6, scale = 'linear', spacing = 'linear', tic
         tpos = scale_list(tickmarks, scale = scale)
         tmarks = tickmarks.copy()
     ax.set_xticks(tpos)
-    ax.set_xticklabels([f"{x}" for x in tmarks], rotation = rotation)
+    ax.set_xticklabels([fmt.format(x) for x in tmarks], rotation = rotation)
     return
 
 
