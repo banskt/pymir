@@ -137,8 +137,8 @@ def banskt_colors():
 
 def kelly_colors():
     kelly_colors_hex = [
-        '#FFB300', # Vivid Yellow
         '#803E75', # Strong Purple
+        '#FFB300', # Vivid Yellow
         '#FF6800', # Vivid Orange
         '#A6BDD7', # Very Light Blue
         '#C10020', # Vivid Red
