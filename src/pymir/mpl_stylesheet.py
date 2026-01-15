@@ -9,6 +9,7 @@ from matplotlib import cycler
 
 def banskt_presentation(dpi = 300, linewidth = 2, splinewidth = 2, ticksize = 8, 
                         fontsize = 14, fontfamily = 'latex-clearsans',
+                        customfont = None,
                         padding = 10, 
                         black = '#333333', splinecolor = "#C6C6C6", textcolor = None, colors = 'banskt'):
 
@@ -36,6 +37,9 @@ def banskt_presentation(dpi = 300, linewidth = 2, splinewidth = 2, ticksize = 8,
         matplotlib.rcParams['font.family'] = 'sans-serif'
         matplotlib.rcParams['font.sans-serif'] = 'DejaVu Sans'
         matplotlib.rcParams['mathtext.fontset'] =  'stixsans'
+
+    if customfont is not None:
+        matplotlib.rcParams['font.family'] = 'customfont'
 
     # Size
     matplotlib.rcParams['figure.figsize'] = 8, 8

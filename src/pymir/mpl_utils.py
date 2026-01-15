@@ -59,6 +59,8 @@ def scale_list(x, scale = 'linear'):
         xscale = [np.log10(y) for y in x]
     elif scale == 'log2':
         xscale = [np.log2(y) for y in x]
+    elif scale == 'power2':
+        xscale = [2**y for y in x]
     return xscale
 
 
@@ -69,6 +71,8 @@ def descale_list(x, scale = 'linear'):
         xscale = [10**y for y in x]
     elif scale == 'log2':
         xscale = [2**y for y in x]
+    elif scale == 'power2':
+        xscale = [np.log2(y) for y in x]
     return xscale
 
 
@@ -79,6 +83,8 @@ def scale_array(x, scale):
         xscale = np.log10(x)
     elif scale == 'log2':
         xscale = np.log2(x)
+    elif scale == 'power2':
+        xscale = np.power(2,x)
     return xscale
 
 
